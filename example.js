@@ -16,13 +16,19 @@ const data = [
   {
     name: "Dan",
     age: 30,
+    class: {
+      name: "Golden",
+      level: {
+        value: "Black Level"
+      }
+    }
   },
 ];
 const search = new Searchables(data);
-search.addIndex(["name", "age"]);
+search.addIndex(["name", "age", "class.name", "class.level.value"]);
 
 search
-  .find("jack 30")
+  .find("jack")
   .then((res) => {
     console.log("Found =>", res);
   })

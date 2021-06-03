@@ -15,6 +15,19 @@ module.exports.Searchables = class {
   }
 
   /**
+   * @Info A recursive function to get the value of an index at any depth in an object
+   * @param {*, *} (index, object )
+   */
+  getIndexValue(index, object){
+    let temp = object;
+    const indexes = `${index}`.split(".");
+    _.forEach(indexes, function(child){
+      if(temp[child]) temp = temp[child];
+    })
+    return temp;
+  }
+
+  /**
    * 
    * @param {*} keyword 
    * @returns Promise that resolves a result matching the keyword at the specified indexes
@@ -30,10 +43,12 @@ module.exports.Searchables = class {
                 // dynamically generate searchable indexes
                 _.concat(
                   _.map(this.indexes, function (index) {
-                    return `${data[index]}`
+                    // get index value to depth n
+                    const value = this.getIndexValue(index, data);
+                    return `${value}`
                       .toLowerCase()
                       .split(/[^a-zA-Z0-9]/g);
-                  })
+                  }.bind(this))
                 ),
                 function (word) {
                   return _.find(
