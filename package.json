@@ -6,10 +6,13 @@
     "repository": "https://github.com/zheeno/searchables.git",
     "main": "index.js",
     "keywords": [
-      "searchables",
-      "npm",
-      "package",
-      "zheeno",
-      "array search"
-    ]
+        "searchables",
+        "npm",
+        "package",
+        "zheeno",
+        "array search"
+    ],
+    "dependencies": {
+        "lodash": "^4.17.21"
+    }
 }
