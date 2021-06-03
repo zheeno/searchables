@@ -3,7 +3,7 @@
 # Searchables  
 
 ```
-npm install searchables
+npm i @zheeno/searchables
 ```
 
 This module allows to search into an array of objects using for a keyword matching any entry with an indexed property.
@@ -13,7 +13,7 @@ This module allows to search into an array of objects using for a keyword matchi
 ### Step 1 - Import the package into your project: 
 
 ``` js
-const Searchables = require("Searchables");
+const { Searchables } = require("@zheeno/searchables");
 ```
 
 
@@ -44,7 +44,7 @@ search
 ### Example: 
 
 ``` js
-const { Searchables } = require(".");
+const { Searchables } = require("@zheeno/searchables");
 
 const data = [
   {
