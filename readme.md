@@ -73,7 +73,7 @@ const search = new Searchables(data);
 search.addIndex(["name", "age"]);
 
 search
-  .find("jack 30") // accepts 
+  .find("jack 30") // accepts a string seprated by whitespaces or special characters 
   .then((res) => {
     console.log("Found =>", res);
   })
@@ -158,7 +158,7 @@ const search = new Searchables(data);
 search.addIndex(["class.name", "class.level.id", "class.level.category.name"]);
 
 search
-  .find("jack") // accepts 
+  .find("xBjdE332m Silver") // accepts a string seprated by whitespaces or special characters 
   .then((res) => {
     console.log("Found =>", res);
   })
