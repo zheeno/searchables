@@ -1,7 +1,7 @@
 {
     "name": "@zheeno/searchables",
     "version": "2.2.0",
-    "description": "Removes all spaces from a string",
+    "description": "This module allows to you to perform  deep search on an array of objects using for a keyword matching any entry with an indexed property",
     "license": "MIT",
     "repository": "https://github.com/zheeno/searchables.git",
     "main": "index.js",

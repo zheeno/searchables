@@ -6,7 +6,7 @@
 npm i @zheeno/searchables
 ```
 
-This module allows to search into an array of objects using for a keyword matching any entry with an indexed property.
+This module allows to you to perform  deep search on an array of objects using for a keyword matching any entry with an indexed property.
 
 ## Usage
 
@@ -41,7 +41,8 @@ search
   .catch((error) => console.log("Error =>", error.message));
 ```
 
-### Example: 
+### Example 1: 
+This is a basic example showing a search performed on the indexes on nodes with the lowest depth in the object tree.
 
 ``` js
 const { Searchables } = require("@zheeno/searchables");
@@ -49,23 +50,23 @@ const { Searchables } = require("@zheeno/searchables");
 const data = [
   {
     name: "Efezino",
-    age: 28,
+    age: 28
   },
   {
     name: "Adeyemi",
-    age: 30,
+    age: 30
   },
   {
     name: "Jeffery",
-    age: 22,
+    age: 22
   },
   {
     name: "Charles",
-    age: 18,
+    age: 18
   },
   {
     name: "Solomon",
-    age: 30,
+    age: 30
   }
 ];
 const search = new Searchables(data);
@@ -73,6 +74,91 @@ search.addIndex(["name", "age"]);
 
 search
   .find("jack 30") // accepts 
+  .then((res) => {
+    console.log("Found =>", res);
+  })
+  .catch((error) => console.log("Error =>", error.message));
+
+``` 
+
+
+### Example 2: 
+This example shows how to search indexes of an object tree whose node is located at depth `N`.
+``` js
+const { Searchables } = require("@zheeno/searchables");
+
+const data = [
+  {
+    name: "Efezino",
+    age: 28,
+    class: {
+      name: "Emerald"
+      level: {
+        id: "wDex87sm0"
+        category:{
+          name: "Secondary"
+        }
+      }
+    }
+  },
+  {
+    name: "Adeyemi",
+    age: 30,
+    class: {
+      name: "Pearl"
+      level: {
+        id: "mM2F0jHah"
+        category:{
+          name: "Primary"
+        }
+      }
+    }
+  },
+  {
+    name: "Jeffery",
+    age: 22,
+    class: {
+      name: "Silver"
+      level: {
+        id: "I50SeEDem"
+        category:{
+          name: "Secondary"
+        }
+      }
+    }
+  },
+  {
+    name: "Charles",
+    age: 18,
+    class: {
+      name: "Gold"
+      level: {
+        id: "cS34mMab5"
+        category:{
+          name: "Primary"
+        }
+      }
+    }
+  },
+  {
+    name: "Solomon",
+    age: 30,
+    class: {
+      name: "Gold"
+      level: {
+        id: "xBjdE332m"
+        category:{
+          name: "Primary"
+        }
+      }
+    }
+  }
+];
+const search = new Searchables(data);
+search.addIndex(["class.name", "class.level.id", "class.level.category.name"]);
+
+search
+  .find("jack") // accepts 
   .then((res) => {
     console.log("Found =>", res);
   })
