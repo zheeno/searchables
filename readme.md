@@ -6,7 +6,7 @@
 npm i @zheeno/searchables
 ```
 
-This module allows to you to perform  deep search on an array of objects using for a keyword matching any entry with an indexed property.
+This module allows to you to perform  deep search on an array of objects for a keyword matching any entry with an indexed property.
 
 ## Usage
 
@@ -92,9 +92,9 @@ const data = [
     name: "Efezino",
     age: 28,
     class: {
-      name: "Emerald"
+      name: "Emerald",
       level: {
-        id: "wDex87sm0"
+        id: "wDex87sm0",
         category:{
           name: "Secondary"
         }
@@ -105,9 +105,9 @@ const data = [
     name: "Adeyemi",
     age: 30,
     class: {
-      name: "Pearl"
+      name: "Pearl",
       level: {
-        id: "mM2F0jHah"
+        id: "mM2F0jHah",
         category:{
           name: "Primary"
         }
@@ -118,9 +118,9 @@ const data = [
     name: "Jeffery",
     age: 22,
     class: {
-      name: "Silver"
+      name: "Silver",
       level: {
-        id: "I50SeEDem"
+        id: "I50SeEDem",
         category:{
           name: "Secondary"
         }
@@ -131,11 +131,11 @@ const data = [
     name: "Charles",
     age: 18,
     class: {
-      name: "Gold"
+      name: "Gold",
       level: {
-        id: "cS34mMab5"
+        id: "cS34mMab5",
         category:{
-          name: "Primary"
+          name: "Primary",
         }
       }
     }
@@ -144,9 +144,9 @@ const data = [
     name: "Solomon",
     age: 30,
     class: {
-      name: "Gold"
+      name: "Gold",
       level: {
-        id: "xBjdE332m"
+        id: "xBjdE332m",
         category:{
           name: "Primary"
         }
